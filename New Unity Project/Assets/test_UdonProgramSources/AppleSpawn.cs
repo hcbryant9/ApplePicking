@@ -19,11 +19,14 @@ public class AppleSpawn : UdonSharpBehaviour
     //private bool[] isSpawned;
     private float nextSpawnTime;
 
+
+    private AudioSource mp3;
     void Start()
     {
         spawnPoints = GetComponentsInChildren<Transform>();
         //isSpawned = new bool[spawnPoints.Length];
         nextSpawnTime = Time.time + spawnInterval;
+        //mp3 = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -35,6 +38,7 @@ public class AppleSpawn : UdonSharpBehaviour
     }
     void SpawnApple()
     {
+        //mp3.Play();
         int randomIndex = Random.Range(1, spawnPoints.Length);
 
         //make sure to make it so that is spawned gets changed on collection

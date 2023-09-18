@@ -6,19 +6,11 @@ using VRC.Udon;
 
 public class AppleCount : UdonSharpBehaviour
 {
-    public int counter;
+    private int counter = 0;
 
-    private AudioSource collection;
-    
-    void Start()
+    void OnPickup()
     {
-        collection = GetComponent<AudioSource>();
-    }
-    public void increaseCount()
-    {
-        Debug.Log("FUNCTION CALLED");
-        collection.Play();
+        Debug.Log("PICKEDUP");
         counter++;
-        Debug.Log(counter);
     }
 }
